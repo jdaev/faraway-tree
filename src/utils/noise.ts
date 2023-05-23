@@ -66,11 +66,14 @@ export function generateNoiseMap(
     }
 
     for (var j = 0; j < height; j++) {
-      noise[i][j] = Math.floor(
-        ((noise[i][j] - minNoiseHeight) / (maxNoiseHeight - minNoiseHeight)) *
-          255
-      );
+      noise[i][j] = (noise[i][j] - minNoiseHeight) / (maxNoiseHeight - minNoiseHeight);
     }
+
   }
+
+  //print max and min noise height
+    console.log("max noise height: " + maxNoiseHeight);
+    console.log("min noise height: " + minNoiseHeight);
+    
   return noise;
 }
